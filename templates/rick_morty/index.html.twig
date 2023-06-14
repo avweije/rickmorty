@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RickMortyControllerXXX!{% endblock %}
+
+{% block body %}
+
+<div class="rickmorty-page-container">
+    <div class="rickmorty-page-title">
+        <h1>The Rick and Morty Character Finder</h1>
+        <p><b>How they make a plumbus:</b> First they take the dingle bop and they smooth it out with a bunch of schleem. The schleem is then...repurposed for later batches. They take the dingle bop and they push it through the grumbo, where the fleeb is rubbed against it. It's important that the fleeb is rubbed, becasue the fleeb has all the fleeb juice. Then, a schlami shows up, and he rubs it...and spits on it. They cut the fleeb. There's several hizzards in the way. The blamfs rub against the chumbles, and the...plubis, and grumbo are shaved away. That leaves you with...a regular old plumbus.</p>
+    </div>
+
+    <div class="rickmorty-header">
+        <div>
+            <label>Episode:</label>
+            <select class="form-control" id="episodeSelect">
+                <option value=""></option>
+                {% for item in episodes %}
+                <option value="{{ item.id }}">{{ item.episode ~ ' | ' ~ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Location:</label>
+            <select class="form-control" id="locationSelect">
+                <option value=""></option>
+                {% for item in locations %}
+                <option value="{{ item.id }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Dimension:</label>
+            <select class="form-control" id="dimensionSelect">
+                <option value=""></option>
+                {% for item in dimensions %}
+                <option value="{{ item.name }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+     <div id="charactersContainer" class="rickmorty-character-container">
+        {{ include('rick_morty/list.html.twig') }}
+    </div>
+
+
+</div>
+{% endblock %}

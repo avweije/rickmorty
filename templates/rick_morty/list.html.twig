@@ -1,0 +1,39 @@
+{% if characters is defined %}
+
+{% if characters|length > 0 %}
+
+<div class="rickmorty-character-list">
+{% for item in characters %}
+    <div class="rickmorty-character-item">
+        <img class="rickmorty-character-image" src="{{ item.image }}">
+        <div class="rickmorty-character-name">{{ item.name }}</div>
+        <div class="rickmorty-character-status"><span class="status-{{ item.status|lower }}"></span>{{ item.status }}</div>
+        <table border="0">
+        <tr><td class="attribute-label">Species:</td>
+            <td class="attribute-value">{{ item.species }}</td></tr>
+        {% if item.type is not empty %}
+        <tr><td class="attribute-label">Type:</td>
+            <td class="attribute-value">{{ item.type }}</td></tr>
+        {% endif %}
+        <tr><td class="attribute-label">Gender:</td>
+            <td class="attribute-value">{{ item.gender }}</td></tr>
+        <tr><td class="attribute-label">Origin:</td>
+            <td class="attribute-value">{{ item.origin.name }}</td></tr>
+        <tr><td class="attribute-label">Location:</td>
+            <td class="attribute-value">{{ item.location.name }}</td></tr>
+        </table>
+    </div>
+{% endfor %}
+</div>
+
+{% else %}
+
+<p>No characters found to display.</p>
+
+{% endif %}
+
+{% else %}
+
+<p>Select an episode, location or dimension to show the characters.</p>
+
+{% endif %}

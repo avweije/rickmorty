@@ -1,3 +1,9 @@
+homepage:
+    path: /
+    controller: App\Controller\RickMortyController::index
+    defaults:
+        template: rick_morty/index.html.twig
+
 controllers:
     resource:
         path: ../src/Controller/

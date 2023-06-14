@@ -1,0 +1,172 @@
+body {
+    background-color: lightgray;
+    margin: 0;
+    font-family: "Merriweather", Helvetica, sans-serif;
+    color: #111;
+}
+
+select {
+    font-family: "Merriweather", Helvetica, sans-serif;
+    padding: .5em .3em;
+    border-radius: .2em;
+}
+
+.rickmorty-page-container {
+    padding: 1.5em;
+}
+
+.rickmorty-page-title {
+    margin: 0 1em;
+}
+
+.rickmorty-header {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rickmorty-header > div {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 1em;
+    min-width: 10em;
+    width: calc(33% - 2em);
+    overflow: hidden;
+}
+
+.rickmorty-header > div > label {
+    display: block; 
+    font-size: 1.2em; 
+    font-weight: bold;
+    margin: 0 0 .3em;
+}
+
+.rickmorty-header > div > select {
+    width: 100%;
+}
+
+.rickmorty-character-container > p {
+    margin: 2em 1em;
+    font-size: 1.3em;
+}
+
+.rickmorty-character-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rickmorty-character-list .rickmorty-character-item {
+    border: solid 1px rgba(0,0,0,.2);
+    border-radius: 1em;
+    background-color: #e9e9e9;
+    margin: 1em;
+    padding: 1em;
+    min-width: 15em;
+    width: calc(33% - 4em);
+}
+
+.rickmorty-character-list .rickmorty-character-image {
+    float: left;
+    display: inline-block;
+    border: solid 1px rgba(0,0,0,.7);
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    object-fit: cover;
+    margin: 0 1em 1em 0;
+}
+
+.rickmorty-character-list .rickmorty-character-item > div {
+    padding-bottom: .4em;
+}
+
+.rickmorty-character-list .rickmorty-character-item .rickmorty-character-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-bottom: .5em;
+}
+
+.rickmorty-character-list .rickmorty-character-status {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.rickmorty-character-list .rickmorty-character-status > span {
+    display: inline-block;
+    border: solid 1px rgba(0,0,0,.3);
+    border-radius: 50%;
+    background-color: grey;
+    width: .4em;
+    height: .4em;
+    margin-right: .4em;
+}
+
+.rickmorty-character-list .rickmorty-character-status > .status-alive {
+    background-color: green;
+}
+.rickmorty-character-list .rickmorty-character-status > .status-dead {
+    background-color: red;
+}
+
+.rickmorty-character-list .rickmorty-character-item > table {
+    clear: both;
+    table-layout: fixed;
+    max-width: 100%;
+}
+
+.rickmorty-character-list .rickmorty-character-item > table td {
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.rickmorty-character-list .rickmorty-character-item > table td.attribute-label {
+    font-weight: bold;
+    font-size: .9em;
+    color: #222;
+    padding: .1em .5em 0 0;
+    white-space: nowrap;
+}
+
+
+/* spinner */
+
+#rickmorty-overlay{	
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height:100%;
+    display: none;
+    background: rgba(0,0,0,0.4);
+}
+
+.rickmorty-cv-spinner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.rickmorty-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #ddd solid;
+    border-top: 4px #2e93e6 solid;
+    border-radius: 50%;
+    animation: sp-anime 0.8s infinite linear;
+}
+
+@keyframes sp-anime {
+    100% { 
+      transform: rotate(360deg); 
+    }
+}
+
+.is-hide {
+    display:none;
+}
